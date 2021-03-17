@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="dns-prefetch" href="https://res.klook.com" />
+    <link rel="dns-prefetch" href="https://cdn.klook.com" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta content="telephone=no,email=no" name="format-detection">
+
+
+
+    <link rel="stylesheet" href="https://cdn.klook.com/s/dist_web/assert/mobile/css/pages/pay/web3_payment-791a970263.css">
+
+
+</head>
+
+<body  ontouchstart=""  class="lang_zh-CN   " >
+
+<div id="web3_payment" class="grid-row" style="">
+    <div class="col">
+
+        <ul class="cybersource_pay_loading">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+    </div>
+    <div class="label">您的付款正在处理，请稍候。请勿离开此页或退出应用。</div>
+    <div class="logo">
+        <svg style="height:18px;enable-background:new 0 0 126 21;" version="1.1" id="klook-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 126 21" xml:space="preserve">
+
+<g id="logo-en">
+    <path style="fill:#FF5722;" d="M54.1,0C54,0,54,0,54.1,0c-3.8,0-7,1.9-8.8,4.8C43.4,1.9,40.1,0,36.4,0c0,0-0.1,0-0.1,0
+        c-5.8,0-10.5,4.8-10.4,10.6c0,5.8,4.7,10.4,10.5,10.4c0,0,0.1,0,0.1,0c3.7,0,6.9-1.9,8.8-4.8c1.9,2.9,5.1,4.8,8.8,4.8
+        c0,0,0.1,0,0.1,0c5.8,0,10.5-4.8,10.4-10.6C64.5,4.7,59.8,0,54.1,0z M36.4,17.7L36.4,17.7c-2,0-3.8-0.7-5.1-2.1
+        c-1.4-1.3-2.1-3.1-2.1-5c0-1.9,0.7-3.7,2.1-5.1c1.3-1.4,3.1-2.1,5.1-2.1h0.1l0,0l0,0c1.9,0,3.7,0.7,5.1,2.1c1.4,1.3,2.1,3.1,2.1,5
+        C43.6,14.4,40.4,17.7,36.4,17.7z M54.1,17.7L54.1,17.7c-2,0-3.8-0.7-5.1-2.1c-1.4-1.3-2.1-3.1-2.1-5c0-1.9,0.7-3.7,2.1-5.1
+        c1.3-1.4,3.1-2.1,5.1-2.1H54l0,0l0,0c1.9,0,3.7,0.7,5.1,2.1c1.4,1.3,2.1,3.1,2.1,5C61.3,14.4,58.1,17.7,54.1,17.7z"/>
+    <path style="fill:#FF5722;" d="M0,0v21c1.8,0,3.3-1.5,3.3-3.3V3.3C3.3,1.5,1.8,0,0,0z"/>
+    <path style="fill:#FF5722;" d="M25.4,17.7h-4.1V3.3c0-1.8-1.5-3.3-3.3-3.3l0,0v21h3.3h0h7.4l0,0C28.7,19.2,27.3,17.7,25.4,17.7z"/>
+    <path style="fill:#FF5722;" d="M65.9,0L65.9,0v21l0,0c1.8,0,3.3-1.5,3.3-3.3V3.3C69.2,1.5,67.7,0,65.9,0z"/>
+    <path style="fill:#FF5722;" d="M80.2,16.3l-5.8-5.8l5.8-5.8c1.3-1.3,1.3-3.4,0-4.7L69.7,10.5L80.2,21l0,0C81.5,19.7,81.5,17.6,80.2,16.3z"/>
+    <path style="fill:#FF5722;" d="M8.5,10.5l5.8-5.8c1.3-1.3,1.3-3.4,0-4.7L3.9,10.5L14.4,21l0,0c1.3-1.3,1.3-3.4,0-4.7L8.5,10.5z"/>
+</g>
+</svg>
+
+    </div>
+</div>
+
+<form id="adyen_pay_form" method="POST">
+    <input type="hidden" name="PaReq" />
+    <input type="hidden" name="MD" />
+    <input type="hidden" name="TermUrl" />
+</form>
+
+<!-- <form id="sybersource_new_card_payment_form" action="" method="post">
+    <input type="hidden" class="access_key" name="access_key" value="">
+    <input type="hidden" class="profile_id" name="profile_id" value="">
+    <input type="hidden" class="merchant_id" name="merchant_id" value="">
+    <input type="hidden" class="transaction_uuid" name="transaction_uuid" value="">
+    <input type="hidden" class="signed_field_names" name="signed_field_names" value="access_key,profile_id,merchant_id,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,amount,currency,payment_method,bill_to_forename,bill_to_surname,bill_to_email,bill_to_address_line1,bill_to_address_city,bill_to_address_country,bill_to_address_state,bill_to_address_postal_code,merchant_defined_data5">
+    <input type="hidden" class="unsigned_field_names" name="unsigned_field_names" value="card_type,card_number,card_expiry_date,card_cvn">
+    <input type="hidden" class="signed_date_time" name="signed_date_time" value="">
+    <input type="hidden" class="signature" name="signature" value="">
+    <input type="hidden" class="locale" name="locale" value="en">
+    <input type="hidden" class="transaction_type" name="transaction_type" value="">
+    <input type="hidden" class="reference_number" name="reference_number" value="">
+    <input type="hidden" class="amount" name="amount" value="">
+    <input type="hidden" class="currency" name="currency" value="">
+
+    <input type="hidden" class="payment_method" name="payment_method" value="card">
+    <input type="hidden" class="card_type" name="card_type" value="">
+    <input type="hidden" class="card_number" name="card_number" value="">
+    <input type="hidden" class="card_expiry_date" name="card_expiry_date" value="">
+    <input type="hidden" class="card_cvn" name="card_cvn" value="">
+    <input type="hidden" class="bill_to_forename" name="bill_to_forename" value="">
+    <input type="hidden" class="bill_to_surname" name="bill_to_surname" value="">
+    <input type="hidden" class="bill_to_email" name="bill_to_email" value="">
+    <input type="hidden" class="merchant_defined_data5" name="merchant_defined_data5" value="web"> -->
+
+<!-- 此为假数据 -->
+<!-- <input type="hidden" class="bill_to_address_line1" name="bill_to_address_line1" value="1295 Charleston Rd">
+<input type="hidden" class="bill_to_address_city" name="bill_to_address_city" value="Mountain View">
+<input type="hidden" class="bill_to_address_country" name="bill_to_address_country" value="US">
+<input type="hidden" class="bill_to_address_state" name="bill_to_address_state" value="CA">
+<input type="hidden" class="bill_to_address_postal_code" name="bill_to_address_postal_code" value="94043">
+</form> -->
+
+<form id="sybersource_old_card_payment_form" action="" method="post">
+    <input type="hidden" class="access_key" name="access_key" value="">
+    <input type="hidden" class="profile_id" name="profile_id" value="">
+    <input type="hidden" class="merchant_id" name="merchant_id" value="">
+    <input type="hidden" class="transaction_uuid" name="transaction_uuid" value="">
+    <input type="hidden" class="signed_field_names" name="signed_field_names" value="access_key,profile_id,merchant_id,transaction_uuid,signed_field_names,unsigned_field_names,signed_date_time,locale,transaction_type,reference_number,amount,currency,payment_token,bill_to_address_line1,bill_to_address_city,bill_to_address_country,merchant_defined_data5,bill_to_forename,bill_to_surname,bill_to_email">
+    <input type="hidden" class="unsigned_field_names" name="unsigned_field_names" value="">
+    <input type="hidden" class="signed_date_time" name="signed_date_time" value="">
+    <input type="hidden" class="signature" name="signature" value="">
+    <input type="hidden" class="locale" name="locale" value="en">
+    <input type="hidden" class="transaction_type" name="transaction_type" value="authorization">
+    <input type="hidden" class="reference_number" name="reference_number" value="">
+    <input type="hidden" class="amount" name="amount" value="">
+    <input type="hidden" class="currency" name="currency" value="">
+    <input type="hidden" class="payment_token" name="payment_token" value="">
+    <input type="hidden" class="bill_to_forename" name="bill_to_forename" value="">
+    <input type="hidden" class="bill_to_surname" name="bill_to_surname" value="">
+    <input type="hidden" class="bill_to_email" name="bill_to_email" value="">
+    <input type="hidden" class="merchant_defined_data5" name="merchant_defined_data5" value="web">
+
+    <!-- 此为假数据 -->
+    <input type="hidden" class="bill_to_address_line1" name="bill_to_address_line1" value="1295 Charleston Rd">
+    <input type="hidden" class="bill_to_address_city" name="bill_to_address_city" value="Mountain View">
+    <input type="hidden" class="bill_to_address_country" name="bill_to_address_country" value="US">
+</form>
+
+
+
+
+<div class="g_row1 hktb f_hidden j_bottom_banner" style="position:fixed;bottom:0;z-index:1000;">
+    <b class="close klook-icon-close" style="color:black;opacity: 1;"></b>
+    <div class="g_main">
+        <a href="javascript:;" data-role="mixpanel-banner">
+            <!--<img class="g_left">-->
+        </a>
+    </div>
+</div>
+
+
+<section id="cookie_banner" class="f_hidden j_m_cookie_banner" >
+    <div class="flex_v_justify">
+        <div class="g_main t12">
+            为了给您提供更佳的浏览体验，Klook在本网站运用Cookies技术。如果您持续使用本网站，代表您同意此<a class='t_href' href='/zh-CN/cookiepolicy'>Cookie政策</a>。
+        </div>
+        <b class="close klook-icon-close" style="color:white;opacity: 1;"></b>
+    </div>
+</section>
+</body>
+
+
+<script>
+    var KLK_LANG = 'zh-CN';
+    var KLK_ENV = 'prd';
+    var KLK_LANG_PATH = 'zh-CN/';
+    var KLK_CURRENCY = 'HKD';
+    var KLK_IP_COUNTRY = 'HK';
+    var KLK_PAGE_DATA = {"_lang":"zh-CN","_res_en_lang":"zh-CN","_url_path":"/zh-CN/web3/order-payment/alipayhk_antfin","_lang_path":"zh-CN/","_env":"prd","_platform":"mobile","_currency_list":{"suggestCurrency":[{"value":"CNY","name":"人民币"},{"value":"HKD","name":"港币"},{"value":"MYR","name":"林吉特"},{"value":"TWD","name":"台币"},{"value":"SGD","name":"新币"},{"value":"USD","name":"美元"},{"value":"KRW","name":"韩元"}],"otherCurrency":[{"value":"AED","name":"阿联酋迪拉姆"},{"value":"AUD","name":"澳元"},{"value":"CAD","name":"加拿大元"},{"value":"CHF","name":"瑞士法郎"},{"value":"DKK","name":"丹麦克朗"},{"value":"EGP","name":"埃及镑"},{"value":"EUR","name":"欧元"},{"value":"FJD","name":"斐济元"},{"value":"GBP","name":"英镑"},{"value":"IDR","name":"印尼盾"},{"value":"INR","name":"印度卢比"},{"value":"ISK","name":"冰岛克朗"},{"value":"JOD","name":"约旦第纳尔"},{"value":"JPY","name":"日元"},{"value":"KHR","name":"瑞尔"},{"value":"LAK","name":"老挝基普"},{"value":"LBP","name":"黎巴嫩镑"},{"value":"MAD","name":"摩洛哥迪拉姆"},{"value":"MGA","name":"马达加斯加阿里亚里"},{"value":"MMK","name":"缅元"},{"value":"MOP","name":"澳门元"},{"value":"MUR","name":"毛里求斯卢比"},{"value":"MXN","name":"墨西哥比索"},{"value":"NOK","name":"挪威克朗"},{"value":"NZD","name":"新西兰元"},{"value":"OMR","name":"阿曼里亚尔"},{"value":"PHP","name":"菲律宾比索"},{"value":"QAR","name":"卡塔尔里亚尔"},{"value":"RUB","name":"俄罗斯卢布"},{"value":"SEK","name":"瑞典克朗"},{"value":"THB","name":"泰铢"},{"value":"TRY","name":"新土耳其里拉"},{"value":"VND","name":"越南盾"},{"value":"ZAR","name":"南非兰特"}]},"_currency":"HKD","_currency_symbo":"HK$","_symbo_list":{"HKD":"HK$","USD":"US$","TWD":"NT$","SGD":"S$","CNY":"¥","AUD":"AUD","GBP":"£","LAK":"₭","EUR":"€","THB":"฿","NZD":"NZ$","MYR":"RM","JPY":"¥","AED":"AED","PHP":"₱","KRW":"₩","VND":"₫","IDR":"Rp","SEK":"kr","NOK":"kr","DKK":"kr","CHF":"CHF","RUB":"₽","TRY":"YTL","ISK":"kr","INR":"₹","KHR":"KHR","MMK":"BUK","MOP":"MOP$","QAR":"QR","OMR":"OMR","JOD":"JOD","LBP":"LBP","FJD":"$","CAD":"CAD","MUR":"Rs","MXN":"$","MAD":"DH","EGP":"EGP","ZAR":"R","MGA":"MGA"},"_currency_rate":{"USDHKD":7.751157,"CNYHKD":1.106666,"EURHKD":8.982789,"GBPHKD":9.876446,"AUDHKD":5.517759,"SGDHKD":5.596315,"TWDHKD":0.263262,"THBHKD":0.244417,"JPYHKD":0.07245,"KRWHKD":0.006459,"IDRHKD":0.000529,"PHPHKD":0.156882,"LAKHKD":0.000855,"MYRHKD":1.818446,"VNDHKD":0.000334,"AEDHKD":2.110283,"NZDHKD":5.151877,"ISKHKD":0.056931,"SEKHKD":0.87548,"NOKHKD":0.844215,"DKKHKD":1.2069,"CHFHKD":8.365821,"RUBHKD":0.108641,"TRYHKD":1.132296,"INRHKD":0.103638,"KHRHKD":0.00189,"MMKHKD":0.005624,"QARHKD":2.128991,"OMRHKD":20.132472,"JODHKD":10.932785,"LBPHKD":0.005135,"AFNHKD":0.100469,"ALLHKD":0.072578,"AMDHKD":0.015975,"ANGHKD":4.316019,"AOAHKD":0.013892,"ARSHKD":0.107907,"AWGHKD":4.306187,"AZNHKD":4.572495,"BAMHKD":4.589851,"BBDHKD":3.83693,"BDTHKD":0.091364,"BGNHKD":4.587451,"BHDHKD":20.560479,"BIFHKD":0.00402,"BMDHKD":7.751157,"BNDHKD":5.594812,"BOBHKD":1.121972,"BRLHKD":1.499338,"BSDHKD":7.747374,"BTCHKD":73752.110601,"BTNHKD":0.103783,"BWPHKD":0.674787,"BYNHKD":3.244299,"BYRHKD":0.000395,"BZDHKD":3.843508,"CADHKD":5.7863,"CDFHKD":0.003954,"CLFHKD":279.173646,"CLPHKD":0.010116,"COPHKD":0.002119,"CRCHKD":0.013318,"CUCHKD":7.751157,"CUPHKD":0.292496,"CVEHKD":0.081121,"CZKHKD":0.342002,"DJFHKD":0.043518,"DOPHKD":0.132339,"DZDHKD":0.060766,"EGPHKD":0.484715,"ERNHKD":0.516737,"ETBHKD":0.220327,"FJDHKD":3.625829,"FKPHKD":9.874983,"GELHKD":2.524749,"GGPHKD":9.874983,"GHSHKD":1.339874,"GIPHKD":9.874983,"GMDHKD":0.14964,"GNFHKD":0.000806,"GTQHKD":1.006469,"GYDHKD":0.037059,"HKDHKD":1,"HNLHKD":0.311167,"HRKHKD":1.194144,"HTGHKD":0.07009,"HUFHKD":0.025902,"ILSHKD":2.27057,"IMPHKD":9.874983,"IQDHKD":0.006511,"IRRHKD":0.000184,"JEPHKD":9.874983,"JMDHKD":0.053246,"KESHKD":0.071763,"KGSHKD":0.101323,"KMFHKD":0.018241,"KPWHKD":0.008612,"KWDHKD":25.273587,"KYDHKD":9.296704,"KZTHKD":0.018728,"LKRHKD":0.041702,"LRDHKD":0.038892,"LSLHKD":0.468911,"LTLHKD":2.625065,"LVLHKD":12.814106,"LYDHKD":5.617504,"MADHKD":0.821203,"MDLHKD":0.458964,"MGAHKD":0.002029,"MKDHKD":0.145695,"MNTHKD":0.002725,"MOPHKD":0.970328,"MROHKD":0.021712,"MURHKD":0.194264,"MVRHKD":0.503001,"MWKHKD":0.01051,"MXNHKD":0.346792,"MZNHKD":0.10975,"NADHKD":0.468626,"NGNHKD":0.019977,"NIOHKD":0.224656,"NPRHKD":0.064864,"PABHKD":7.747374,"PENHKD":2.207642,"PGKHKD":2.248985,"PKRHKD":0.046275,"PLNHKD":2.040887,"PYGHKD":0.001114,"RONHKD":1.858249,"RSDHKD":0.07637,"RWFHKD":0.008159,"SARHKD":2.066453,"SBDHKD":0.933298,"SCRHKD":0.439263,"SDGHKD":0.139975,"SHPHKD":9.874983,"SLLHKD":0.000794,"SOSHKD":0.013307,"SRDHKD":1.039298,"STDHKD":0.000354,"SVCHKD":0.885383,"SYPHKD":0.015104,"SZLHKD":0.468487,"TJSHKD":0.75162,"TMTHKD":2.214609,"TNDHKD":2.78367,"TOPHKD":3.416246,"TTDHKD":1.145538,"TZSHKD":0.003338,"UAHHKD":0.277998,"UGXHKD":0.002092,"UYUHKD":0.179772,"UZSHKD":0.000758,"VEFHKD":0.776083,"VUVHKD":0.067925,"WSTHKD":2.969324,"XAFHKD":0.013685,"XAGHKD":178.062678,"XAUHKD":14674.478537,"XCDHKD":2.868083,"XDRHKD":10.814201,"XOFHKD":0.013516,"XPFHKD":0.074999,"YERHKD":0.030967,"ZARHKD":0.46878,"ZMKHKD":0.000861,"ZMWHKD":0.426727,"ZWLHKD":0.024072},"_ip_country":"HK","_user_ip":"173.248.248.92","_session":"3D0892D9E17F6262A5094544AC1CC27F","_time":1595571411395,"_show_mobile10":true,"_canonical_path":"/zh-CN/web3/order-payment/alipayhk_antfin/","_util_config":{"domain":"https://www.klook.com","user_center_path":1,"hello_user_name":1,"index_invite":1,"footer":1,"downland_bar":1,"banner_ad":1,"faq_klook":1,"chat_with_klook":1,"use_coupons_credits":1,"pay_success_book_url":false,"shopping_cart":1,"promo_discount_code":1},"_webp_support":0,"_k_logged":0,"_cache":0,"_is_from_app":false,"_pay_icon":["unionpay","alipay","newMaster","jcb","wechatpay","newAE","newVisa"],"_meta":{"name":"/web3/order-payment/alipayhk_antfin","spmPageName":"","spmPageQuery":{},"spmPageQueryString":""},"_experimentsHitList":[{"experiment_id":225,"experiment_name":"AA_KeplerID_Mweb","group_id":800,"group_name":"Variant2","need_dye":false,"layer_ids":[32]},{"experiment_id":226,"experiment_name":"AA_KeplerID_Mweb_Homepage","group_id":801,"group_name":"Variant1","need_dye":false,"layer_ids":[44]},{"experiment_id":235,"experiment_name":"LandingPage_TWCampaignPage_mWeb","group_id":-1,"group_name":"","need_dye":false,"layer_ids":[59]}],"_tintedList":"","_page_id":"c309315e-b8b1-4676-bfa8-eb097621a35e"};
+    var KLK_AID_CONF = undefined || {};
+    var KLK_QS_AID_CONF = undefined || {};
+
+</script>
+<script crossorigin src="https://cdn.klook.com/s/dist_web/assert/comm/locales/lang-c4b1e79f2e.zh-CN.js" ></script>
+<script crossorigin src="https://cdn.klook.com/s/dist_web/assert/mobile/js/manifest-2e35606c30.bundle.js"></script>
+<script crossorigin src="https://cdn.klook.com/s/dist_web/assert/mobile/js/vendor-e5374f4744.bundle.js"></script>
+
+<script>
+    var MD = 'undefined';
+    var PaRes = 'undefined';
+    var paymentGateway  = "alipayhk_antfin";
+    var routerMethod  = "GET";
+    var alipay_redirect = "klook://payment_callback/alipayhk_antfin?invoice_guid=9bfd9df7-0d09-45c0-429a-598230216109&invoice_submission_guid=f89cafa4-95fb-447a-79e1-1503c23c9505&order_no=3486404360&platform=ios&authState=3486404360-190afa23-96e1363c&state=3486404360-190afa23-96e1363c&auth_site=&merchantAgreementId=&authCode=28100413W1RI65xVxoYz9nH8Z7SLk029&client_id=4GGO000000000001";
+    if(alipay_redirect){
+        window.location.href = alipay_redirect
+    }
+</script>
+<script crossorigin src="https://cdn.klook.com/s/dist_web/assert/mobile/js/web3_payment_mobile-ad307e44aa.bundle.js"></script>
+
+</html>
