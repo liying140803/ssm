@@ -7,6 +7,8 @@ import cn.no7player.util.CommonResult;
 import cn.no7player.util.ExcelUtil;
 import cn.no7player.util.PDFUtil;
 import cn.no7player.util.WordUtil;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +29,6 @@ import java.util.*;
  * Created by liying
  * Date 2020-08-10
  */
-
 
 @Controller
 public class TestController {
@@ -187,6 +188,46 @@ public class TestController {
             return CommonResult.failed("上传失败");
         }
         return CommonResult.success("上传成功");
+    }
+
+    @RequestMapping(value = "/payment/adyen/creditcard")
+    @ResponseBody
+    public JSON creditcard(HttpServletRequest request) {
+        System.out.println(request.getQueryString());
+        String result = "{\n" +
+                "        \"additionalData\": {\n" +
+                "            \"liabilityShift\": \"false\",\n" +
+                "            \"fraudResultType\": \"GREEN\",\n" +
+                "            \"cardHolderName\": \"Not Provided\",\n" +
+                "            \"cardSummary\": \"4444\",\n" +
+                "            \"fraudManualReview\": \"false\",\n" +
+                "            \"threeDOffered\": \"false\",\n" +
+                "            \"threeDOfferedResponse\": \"N/A\",\n" +
+                "            \"eci\": \"N/A\",\n" +
+                "            \"issuerCountry\": \"GB\",\n" +
+                "            \"expiryDate\": \"3/2030\",\n" +
+                "            \"cavv\": \"N/A\",\n" +
+                "            \"xid\": \"N/A\",\n" +
+                "            \"threeDAuthenticatedResponse\": \"N/A\",\n" +
+                "            \"cavvAlgorithm\": \"N/A\",\n" +
+                "            \"cardBin\": \"555555\",\n" +
+                "            \"recurringProcessingModel\": \"Subscription\",\n" +
+                "            \"threeDAuthenticated\": \"false\",\n" +
+                "            \"paymentMethod\": \"mc\",\n" +
+                "            \"cardPaymentMethod\": \"mccredit\",\n" +
+                "            \"paymentMethodVariant\": \"mccredit\",\n" +
+                "            \"fundingSource\": \"CREDIT\",\n" +
+                "            \"cardIssuingCountry\": \"GB\"\n" +
+                "        },\n" +
+                "        \"fraudResult\": {\n" +
+                "            \"accountScore\": 50\n" +
+                "        },\n" +
+                "        \"pspReference\": \"852618209043629B\",\n" +
+                "        \"resultCode\": \"Authorised\",\n" +
+                "        \"authCode\": \"024847\"\n" +
+                "    }";
+        JSONObject jsonObj = JSONObject.parseObject(result);
+        return jsonObj;
     }
 }
 

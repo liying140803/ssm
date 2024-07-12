@@ -1,7 +1,9 @@
 package cn.no7player.util;
 
+import cn.no7player.controller.UserController;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+import org.apache.log4j.Logger;
 import org.springframework.util.Assert;
 
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +18,7 @@ import java.util.Map;
  * Date 2020-08-11
  */
 public class WordUtil {
+
 
 
     /**

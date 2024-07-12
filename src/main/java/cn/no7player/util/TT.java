@@ -23,11 +23,13 @@ public class TT {
           while (true) {
               try {
                   int orderNo = scanner.nextInt();
+                  String data = scanner.next();
+                  System.out.println(data);
                   System.out.println((orderNo % 1000 % 15) + 1);
               } catch (Exception e) {
-                  System.out.println("输入的数据格式不对");
-              }
+              System.out.println("输入的数据格式不对");
           }
+      }
         /*
        public int hashCode() {
             int h = hash;//default 0

@@ -5,6 +5,7 @@ package cn.no7player.util;
  * Date 2020-12-15
  */
 
+import com.alibaba.fastjson.JSONObject;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
@@ -26,7 +27,7 @@ public class TokenUtil {
         //过期时间和加密算法设置
         Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
         Algorithm algorithm = null;
-        Map<String, Object> header = new HashMap<>(2);
+        Map<String, Object> header = new HashMap<String, Object>(2);
         try {
             algorithm = Algorithm.HMAC256(TOKEN_SECRET);
             //头部信息
@@ -72,5 +73,49 @@ public class TokenUtil {
 
     public String getTokenDataOpenId(String token) {
         return JWT.decode(token).getClaim("openId").asString();
+    }
+
+    public String getJsonData(JSONObject object) {
+        //过期时间和加密算法设置
+        Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
+        Algorithm algorithm = null;
+        Map<String, Object> header = new HashMap<String, Object>(2);
+        try {
+            algorithm = Algorithm.HMAC256(TOKEN_SECRET);
+            //头部信息
+            header.put("typ", "JWT");
+            header.put("alg", "HS256");
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return JWT.create()
+                .withClaim("merchantID", (String) object.get("merchantID"))
+                .withClaim("invoiceNo", (String) object.get("invoiceNo"))
+                .withClaim("cardNo", (String) object.get("cardNo"))
+                .withClaim("amount", (Integer) object.get("amount"))
+                .withClaim("userDefined1", (String) object.get("userDefined1"))
+                .withClaim("userDefined2", (String) object.get("userDefined2"))
+                .withClaim("userDefined3", (String) object.get("userDefined3"))
+                .withClaim("userDefined4", (String)object.get("userDefined4"))
+                .withClaim("userDefined5", (String) object.get("userDefined5"))
+                .withClaim("currencyCode", (String) object.get("currencyCode"))
+                .withClaim("cardToken", (String) object.get("cardToken"))
+                .withClaim("recurringUniqueID", (String) object.get("recurringUniqueID"))
+                .withClaim("tranRef", (String) object.get("tranRef"))
+                .withClaim("eci", (String) object.get("eci"))
+                .withClaim("referenceNo", (String) object.get("referenceNo"))
+                .withClaim("approvalCode", (String) object.get("approvalCode"))
+                .withClaim("transactionDateTime", (String) object.get("transactionDateTime"))
+                .withClaim("agentCode", (String) object.get("agentCode"))
+                .withClaim("channelCode", (String) object.get("channelCode"))
+                .withClaim("issuerCountry", (String) object.get("issuerCountry"))
+                .withClaim("installmentMerchantAbsorbRate", (String) object.get("installmentMerchantAbsorbRate"))
+                .withClaim("idempotencyID", (String) object.get("idempotencyID"))
+                .withClaim("respCode", (String) object.get("respCode"))
+                .withClaim("respDesc", (String) object.get("respDesc"))
+                .withHeader(header)
+                .sign(algorithm);
+
     }
 }

@@ -6,8 +6,8 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Controller;
 
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URLEncoder;
@@ -19,11 +19,11 @@ import java.util.Date;
  * Date 2020-08-12
  */
 
-
+@Controller
 public class PDFUtil {
 
-    private static Logger logger = Logger.getLogger(UserController.class);
 
+    private  static Logger logger = Logger.getLogger(PDFUtil.class);
     /**
      * 创建一个pdf并打开
      *

@@ -23,7 +23,7 @@ import java.io.*;
 
 public class HttpUrl {
     //post请求提交json数据
-    public static String getPostDateByUrl(String url, JSONObject json) {
+    public static String getPostDataByUrl(String url, JSONObject json) {
         String data = null;
         //构造HttpClient的实例
         HttpClient httpClient = new HttpClient();

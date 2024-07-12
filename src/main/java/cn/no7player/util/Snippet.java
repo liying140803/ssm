@@ -1,7 +1,9 @@
 package cn.no7player.util;
+
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Iterator;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -34,9 +36,9 @@ public class Snippet {
             stamper = new PdfStamper(reader, bos);
             AcroFields form = stamper.getAcroFields();
 
-            String[] str = { "123456789", "TOP__ONE", "男", "1991-01-01", "130222111133338888", "河北省保定市" };
+            String[] str = {"123456789", "TOP__ONE", "男", "1991-01-01", "130222111133338888", "河北省保定市"};
             int i = 0;
-            java.util.Iterator<String> it = form.getFields().keySet().iterator();
+            Iterator<String> it = form.getFields().keySet().iterator();
             while (it.hasNext()) {
                 String name = it.next().toString();
                 System.out.println(name);

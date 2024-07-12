@@ -13,8 +13,8 @@ import java.util.*;
 
 
 public class Test {
-    public static void main(String[] args) {
-        LinkedList<Student> list = new LinkedList<Student>();
+    public static void main(String[] args) throws ParseException {
+/*        LinkedList<Student> list = new LinkedList<Student>();
         Set<Student> set = new HashSet<Student>();
         Student stu1 = new Student(3, "张三");
         Student stu2 = new Student(3, "张三");
@@ -26,7 +26,24 @@ public class Test {
 
         set.add(stu1);
         set.add(stu2);
-        System.out.println("set size:" + set.size());
+        List list2 = new ArrayList();
+        list2.add(1);
+        list2.add(8);
+        list2.add(7);
+        list2.add(9);
+        list2.add(4);
+
+//        Collections.sort(list2);
+        list2.sort(null);
+
+        System.out.println(list2);
+
+        System.out.println("set size:" + set.size());*/
+        int arr[] = {1, 4, 3, 7};
+        QuickSort(arr, 0, 3);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
       /*  System.out.println("180天之前的日期是：" + incr(new Date(), 180));
         System.out.println("180天之后的日期是：" + atferDate(new Date(), 180));
 */
@@ -36,13 +53,13 @@ public class Test {
         calendar.add(Calendar.YEAR, -1);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println(format.format(calendar.getTime()));*/
-        dayCompare("2019-04-04", "2021-03-16");
+        System.out.println("日期是："+cha("2023-12-25",178));
 
     }
 
     //计算两个日期相差的天数
     public static Long diff(String dateOne, String dateTwo) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyy-MM-dd");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
         long diff1 = 0;
         try {
             Date date1 = dateFormat.parse(dateOne);
@@ -83,6 +100,24 @@ public class Test {
     }
 
     /**
+     * 计算指定日期指定天数之后的日期
+     * @param fromDate
+     * @param day
+     */
+    public static String cha(String fromDate,int day){
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String result = null;
+        try {
+            Date start_time = format.parse(fromDate);
+            result = atferDate(start_time, day);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /**
      * 计算2个日期之间相差的相差多少月
      *
      * @param fromDate
@@ -117,4 +152,39 @@ public class Test {
         System.out.println(sb.toString());
         return sb.toString();
     }
+
+    //快速排序
+    public static int[] QuickSort(int arr[], int start, int end) {
+        if (start >= end)
+            return arr;
+        int i = start;
+        int j = end;
+        // 基准数
+        int baseval = arr[start];
+        while (i < j) {
+            // 从右向左找比基准数小的数
+            while (i < j && arr[j] >= baseval) {
+                j--;
+            }
+            if (i < j) {
+                arr[i] = arr[j];
+                i++;
+            }
+            // 从左向右找比基准数大的数
+            while (i < j && arr[i] < baseval) {
+                i++;
+            }
+            if (i < j) {
+                arr[j] = arr[i];
+                j--;
+            }
+        }
+        // 把基准数放到i的位置
+        arr[i] = baseval;
+        // 递归
+        QuickSort(arr, start, i - 1);
+        QuickSort(arr, i + 1, end);
+        return arr;
+    }
 }
+

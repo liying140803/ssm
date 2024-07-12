@@ -92,7 +92,7 @@ public class AmountUtil {
     }
 
     public static void main(String[] args) {
-        double amount = 1001.38;
+        double amount = 1001.38534;
         double amountTest = 987654321.00d;
         System.out.println(getFormat(amount));
         getPercent(0.912345);

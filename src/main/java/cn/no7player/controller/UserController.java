@@ -1,6 +1,7 @@
 package cn.no7player.controller;
 
 import cn.no7player.model.UserInfo;
+import cn.no7player.service.RedisService;
 import cn.no7player.service.UserService;
 import cn.no7player.util.CommonResult;
 import com.alibaba.fastjson.JSONObject;
@@ -23,6 +24,9 @@ public class UserController {
     private Logger logger = Logger.getLogger(UserController.class);
 
     @Autowired
+    private RedisService redisService;
+
+    @Autowired
     private UserService userService;
 
     //获取全部用户信息
@@ -30,9 +34,11 @@ public class UserController {
     @ResponseBody
     public CommonResult<List<UserInfo>> getUserInfo(String id) {
         List<UserInfo> userList = userService.getUserInfo(id);
-        if (userList == null || userList.size() == 0) {
+        if (userList == null || userList.isEmpty()) {
             logger.info("查询结果是空");
         }
+        redisService.set("userList", userList);
+        logger.info("插入redis成功");
         return CommonResult.success(userList);
     }
 
